@@ -14,6 +14,7 @@ module.exports = {
     const namespace = options.namespace;
     const platforms = (options.platforms) ? options.platforms.split(',') : options.platforms;
     const overridePrefix = options.overridePrefix;
+    const generateExample = options.generateExample;
 
     const beforeCreation = Date.now();
     createLibrary({
@@ -24,6 +25,7 @@ module.exports = {
       platforms,
       namespace,
       overridePrefix,
+      generateExample,
     }).then(() => {
       console.log(`
 ${emoji.get('books')}  Created library ${name} in \`./${name}\`.
@@ -60,5 +62,9 @@ ${emoji.get('arrow_right')}  To get started type \`cd ./${name}\` and run \`npm 
     command: '--platforms <platforms>',
     description: 'Platforms the library will be created for. (comma separated; default: `ios,android,windows`)',
     default: 'ios,android,windows',
+  }, {
+    command: '--generate-example',
+    description: 'Generates an example project for iOS and Android and links the library to it',
+    default: 'false',
   }]
 };
