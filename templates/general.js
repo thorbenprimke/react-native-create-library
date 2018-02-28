@@ -91,11 +91,22 @@ ${name};
   "scripts": {
     "test": "echo \\"Error: no test specified\\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/github_account_name/${moduleName}.git",
+    "baseUrl": "https://github.com/github_account_name/${moduleName}"
+  },
   "keywords": [
     "react-native"
   ],
-  "author": "",
-  "license": "",
+  "author": {
+    "username": "your_username",
+    "name": "Your Name",
+    "email": "your_name@email.com"
+  },
+  "license": "Apache-2.0",
+  "licenseFilename": "LICENSE",
+  "readmeFilename": "README.md",
   "peerDependencies": {
     ${dependencies}
   },
